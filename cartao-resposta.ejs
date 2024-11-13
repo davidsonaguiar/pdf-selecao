@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cartão de Respostas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #fde9d9;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+        }
+
+        .header {
+            width: fit-content;
+            margin: 0 auto;
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: #fde9d9;
+        }
+
+        .header-top-img-container {
+            width: 50px;
+            height: 50px;
+        }
+
+        .header-top-img-container img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: contain;
+        }
+
+        .header-top-text {
+            text-align: center;
+        }
+
+        .header-top-text-height {
+            line-height: 2.5rem;
+        }
+
+        .header-top-text-bold {
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .header-titulo {
+            padding: 1rem;
+            font-size: 1.5rem;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .header-dados {
+            padding: 1rem;
+            background-color: #FFF;
+            border: 1px solid #999;
+        }
+
+        .header-dados-label {
+            font-weight: bold;
+        }
+
+        .main-container-titulo {
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .main-container {
+            padding: 1rem;
+            background-color: #FFF;
+            border: 1px solid #999;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-top">
+            <div class="header-top-img-container">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Bras%C3%A3o_de_armas_do_Estado_de_Alagoas.png/543px-Bras%C3%A3o_de_armas_do_Estado_de_Alagoas.png" alt="Imagem 1" />
+            </div>
+            <div class="header-top-text">
+                <p class="header-top-text-bold">ESTADO DE ALAGOAS  </br>SECRETARIA DE ESTADO DA EDUCAÇÃO</p>
+                <p class="header-top-text-height">
+                    Processo Seletivo para o Intercâmbio do Programa Daqui
+                    Pra o Mundo - 2024
+                </p>
+                <p class="header-top-text-bold">Prova de Língua Inglesa</p>
+            </div>
+            <div class="header-top-img-container">
+                <img src="./images/image002.png" alt="Imagem 2" />
+            </div>
+        </div>
+
+        <div>
+            <h1 class="header-titulo">
+                SELEÇÃO PARA O INTERCÂMBIO DO PROGRAMA DAQUI PRA O MUNDO
+                2024
+            </h1>
+            <div class="header-dados">
+                <p> <span class="header-dados-label">Nome do candidato:</span> <%= candidato.nome %></p>
+                <p> <span class="header-dados-label">Data de nascimento:</span> <%= candidato.dataNascimento %></p>
+                <p> <span class="header-dados-label">CPF:</span> <%= candidato.cpf %></p>
+                <p> <span class="header-dados-label">GEE:</span> <%= candidato.gee %></p>
+                <p> <span class="header-dados-label">Escola:</span> <%= candidato.escola %></p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div>
+            <h2 class="main-container-titulo">CARTÃO RESPOSTA</h2>
+            <div class="flex-col items-center gap-3">
+                <p class="w-container mt-4">
+                    As respostas deverão ser marcadas de CANETA PRETA OU AZUL.
+                    Marque as alternativas no CARTÃO RESPOSTA, de acordo com o
+                    modelo:
+                </p>
+                <div class="w-fit flex items-center bg-white border border-gray-400 respostas-item">
+                    <span class="px-4 font-bold block">1</span>
+                    <ul class="w-fit p-2 flex gap-3 text-sm border-l border-gray-400">
+                        <li class="w-6 h-6 text-sm rounded-full border-2 border-gray-400 grid place-content-center">A</li>
+                        <li class="w-6 h-6 text-sm rounded-full grid place-content-center bg-gray-700">B</li>
+                        <li class="w-6 h-6 text-sm rounded-full border-2 border-gray-400 grid place-content-center">C</li>
+                        <li class="w-6 h-6 text-sm rounded-full border-2 border-gray-400 grid place-content-center">D</li>
+                    </ul>
+                </div>
+            </div>
+            <ul class="w-container mx-auto py-6">
+                <li><span class="font-bold pr-1">*</span>Não amasse, não dobre, não suje esta folha.</li>
+                <li>
+                    <span class="font-bold pr-1">*</span>Preencha, conforme o exemplo indicado acima, a
+                    alternativa que você considera correta em cada questão.
+                </li>
+                <li>
+                    <span class="font-bold pr-1">*</span>Faça marcas apenas nos locais indicados para responder
+                    às questões.
+                </li>
+            </ul>
+        </div>
+        <div class="w-fit mx-auto bg-white border border-gray-400 border-r-0">
+            <p class="py-2 font-bold text-center border-r border-gray-400">LÍNGUA INGLESA</p>
+            <ul class="w-fit mx-auto grid grid-cols-2">
+                <li class="w-fit flex items-center border-r border-t border-gray-400">
+                    <span class="px-6 font-bold block">1</span>
+                    <ul class="w-fit p-2 alternativas gap-3 text-sm border-l border-gray-400">
+                        <li class="w-8 h-8 rounded-full border-2 border-gray-400 grid place-content-center">A</li>
+                        <li class="w-8 h-8 rounded-full border-2 border-gray-400 grid place-content-center">B</li>
+                        <li class="w-8 h-8 rounded-full border-2 border-gray-400 grid place-content-center">C</li>
+                        <li class="w-8 h-8 rounded-full border-2 border-gray-400 grid place-content-center">D</li>
+                    </ul>
+                </li>
+                <li class="w-fit flex items-center border-r border-t border-gray-400">
+                    <span class="px-6 font-bold block">1</span>
+                    <ul class="w-fit p-2 flex gap-3 text-sm border-l border-gray-400">
+                        <li class="w-8 h-8 rounded-full border-2 border-gray-400 grid place-content-center">A</li>
+                        <li class="w-8 h-8 rounded-full border-2 border-gray-400 grid place-content-center">B</li>
+                        <li class="w-8 h-8 rounded-full border-2 border-gray-400 grid place-content-center">C</li>
+                        <li class="w-8 h-8 rounded-full border-2 border-gray-400 grid place-content-center">D</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </main>
+
+    <footer>
+        <div class="mt-8">
+            <p class="text-center">
+                Assinatura do candidato:
+                ______________________________________________________
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
