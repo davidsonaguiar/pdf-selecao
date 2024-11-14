@@ -23,16 +23,14 @@
         }
 
         .header-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            margin-bottom: 1rem;
             padding: 1rem 2rem;
             background-color: #fde9d9;
         }
 
         .header-top-img-container {
-            width: 100px;
-            height: 100px;
+            width: 80px;
+            height: 80px;
         }
 
         .header-top-img-container img {
@@ -42,12 +40,18 @@
             object-fit: contain;
         }
 
+        .image-left {
+            float: left;
+        }
+
         .header-top-text {
+            width: calc(100% - 160px);
             text-align: center;
         }
 
+
         .header-top-text-height {
-            line-height: 2.5rem;
+            line-height: 2rem;
         }
 
         .header-top-text-bold {
@@ -56,13 +60,16 @@
         }
 
         .header-titulo {
+            margin-top: 2rem;
             padding: 1rem;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             text-align: center;
             font-weight: bold;
+            clear: both ;
         }
 
         .header-dados {
+            margin: 0 2rem;
             padding: 1rem;
             background-color: #FFF;
             border: 1px solid #999;
@@ -86,19 +93,18 @@
            gap: 0.75rem;
         }
 
-        .resposta-item-container {
-            width: fit-content;
-            display: flex;
-            align-items: center;
+        .resposta-item-container {  
             background-color: #FFF;
             border: 1px solid #999;
             list-style: none;
+            display: inline-block;
         }
 
         .resposta-item-container-numeracao {
             padding: 0 1rem; 
             font-weight: bold;
-            display: block;
+            display: flex;
+            display: inline-block;
         }
 
         .resposta-item-container-list-opcoes {
@@ -117,8 +123,9 @@
             font-size: 0.75rem;
             border-radius: 100%;
             border: 2px solid #999;
-            display: grid;
-            place-content: center;
+            line-height: 1.3rem;
+            text-align: center;
+            display: inline-block;
         }
 
         .marcado {
@@ -156,8 +163,7 @@
 
         .tabela-resposta-container > ul {
             width: fit-content;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            display: inline-table;
         }
 
         .tabela-resposta-container > ul > li {
@@ -169,6 +175,7 @@
             border-left: none;
             border-top: none;
             list-style: none;
+            display: inline-block;
         }
 
         footer {
@@ -180,10 +187,10 @@
 <body>
     <header class="header">
         <div class="header-top">
-            <div class="header-top-img-container">
+            <div class="header-top-img-container image-left">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Bras%C3%A3o_de_armas_do_Estado_de_Alagoas.png/543px-Bras%C3%A3o_de_armas_do_Estado_de_Alagoas.png" alt="Imagem 1" />
             </div>
-            <div class="header-top-text">
+            <div class="header-top-text image-left">
                 <p class="header-top-text-bold">ESTADO DE ALAGOAS  </br>SECRETARIA DE ESTADO DA EDUCAÇÃO</p>
                 <p class="header-top-text-height">
                     Processo Seletivo para o Intercâmbio do Programa Daqui
@@ -191,7 +198,7 @@
                 </p>
                 <p class="header-top-text-bold">Prova de Língua Inglesa</p>
             </div>
-            <div class="header-top-img-container">
+            <div class="header-top-img-container image-left">
                 <img src="./images/image002.png" alt="Imagem 2" />
             </div>
         </div>
@@ -214,15 +221,15 @@
     <main>
         <div>
             <h2 class="main-container-titulo">CARTÃO RESPOSTA</h2>
-            <div class="main-container-orientacoes">
+            <div class="main-container-orientacoes" style="display: inline-block; margin: 0 36px;">
                 <p>
                     As respostas deverão ser marcadas de CANETA PRETA OU AZUL.
                     Marque as alternativas no CARTÃO RESPOSTA, de acordo com o
                     modelo:
                 </p>
-                <div class="resposta-item-container">
-                    <span class="resposta-item-container-numeracao">1</span>
-                    <ul class="resposta-item-container-list-opcoes">
+                <div class="resposta-item-container" style="margin: 8px auto 0;">
+                    <p class="resposta-item-container-numeracao" style="display: inline-block; margin: 0 auto;">1</p>
+                    <ul class="resposta-item-container-list-opcoes" style="display: inline-block;">
                         <li>A</li>
                         <li class="marcado">B</li>
                         <li>C</li>
@@ -230,7 +237,7 @@
                     </ul>
                 </div>
             </div>
-            <ul class="list-orientacao">
+            <ul class="list-orientacao" style="margin: 8px 36px;">
                 <li><span class="list-orientacao-span">*</span>Não amasse, não dobre, não suje esta folha.</li>
                 <li>
                     <span class="list-orientacao-span">*</span>Preencha, conforme o exemplo indicado acima, a
@@ -242,21 +249,21 @@
                 </li>
             </ul>
         </div>
-        <div class="tabela-resposta-container">
+        <div class="tabela-resposta-container" style="width: 360px;">
             <p>LÍNGUA INGLESA</p>
-            <ul class="w-fit mx-auto grid grid-cols-2">
-                <li class="resposta-item-container">
-                    <span class="resposta-item-container-numeracao">1</span>
-                    <ul class="resposta-item-container-list-opcoes">
+            <ul style="width: fit-content;">
+                <li class="resposta-item-container" style="display: inline-block; width: 180px;">
+                    <span class="resposta-item-container-numeracao" style="display: inline-block;">1</span>
+                    <ul class="resposta-item-container-list-opcoes" style="display: inline-block;">
                         <li>A</li>
                         <li>B</li>
                         <li>C</li>
                         <li>D</li>
                     </ul>
                 </li>
-                <li class="resposta-item-container">
-                    <span class="resposta-item-container-numeracao">1</span>
-                    <ul class="resposta-item-container-list-opcoes">
+                <li class="resposta-item-container" style="display: inline-block; width: 179px;">
+                    <span class="resposta-item-container-numeracao" style="display: inline-block;">1</span>
+                    <ul class="resposta-item-container-list-opcoes" style="display: inline-block;">
                         <li>A</li>
                         <li>B</li>
                         <li>C</li>
