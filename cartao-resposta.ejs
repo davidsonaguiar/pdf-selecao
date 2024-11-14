@@ -35,7 +35,6 @@
 
         .header-top-img-container img {
             width: 100%;
-            height: 100%;
 
             object-fit: contain;
         }
@@ -70,7 +69,7 @@
 
         .header-dados {
             margin: 0 2rem;
-            padding: 1rem;
+            padding: 0.5rem;
             background-color: #FFF;
             border: 1px solid #999;
         }
@@ -80,8 +79,8 @@
         }
 
         .main-container-titulo {
-            padding: 1rem 0;
-            font-size: 1.25rem;
+            padding: 0.4rem 0;
+            font-size: 1rem;
             text-align: center;
             font-weight: bold;
         }
@@ -93,7 +92,8 @@
            gap: 0.75rem;
         }
 
-        .resposta-item-container {  
+        .resposta-item-container { 
+            margin: 0 auto;
             background-color: #FFF;
             border: 1px solid #999;
             list-style: none;
@@ -101,15 +101,16 @@
         }
 
         .resposta-item-container-numeracao {
-            padding: 0 1rem; 
+            width: 2.5rem;
             font-weight: bold;
             display: flex;
             display: inline-block;
+            text-align: center;
         }
 
         .resposta-item-container-list-opcoes {
             width: fit-content;
-            padding: 0.5rem;
+            padding: 2px;
             display: flex;
             gap: 0.75rem;
             font-size: 0.875rem;
@@ -145,7 +146,6 @@
         }
 
         .tabela-resposta-container {
-            width: fit-content;
             margin: 0 auto;
             background-color: #FFF;
             border: 1px solid #999;
@@ -154,7 +154,7 @@
         }
 
         .tabela-resposta-container p {
-            padding: 0.5rem 0;
+            padding: 2px 0;
             font-weight: bold;
             text-align: center;
             border-bottom: 1px solid #999;
@@ -167,8 +167,6 @@
         }
 
         .tabela-resposta-container > ul > li {
-            width: fit-content;
-            display: flex;
             align-items: center;
             background-color: #FFF;
             border: 1px solid #999;
@@ -179,7 +177,7 @@
         }
 
         footer {
-            margin-top: 3rem;
+            margin: 1.45rem auto 1rem;
             text-align: center;
         }
     </style>
@@ -199,7 +197,7 @@
                 <p class="header-top-text-bold">Prova de Língua Inglesa</p>
             </div>
             <div class="header-top-img-container image-left">
-                <img src="./images/image002.png" alt="Imagem 2" />
+                <img src="https://github.com/davidsonaguiar/pdf-selecao/blob/main/images/image002.png?raw=true" alt="Imagem 2" style="margin: 10px 0 0;"/>
             </div>
         </div>
 
@@ -208,7 +206,7 @@
                 SELEÇÃO PARA O INTERCÂMBIO DO PROGRAMA DAQUI PRA O MUNDO
                 2024
             </h1>
-            <div class="header-dados">
+            <div class="header-dados" style="line-height: 1.25rem;">
                 <p> <span class="header-dados-label">Nome do candidato:</span> <%= candidato.nome %></p>
                 <p> <span class="header-dados-label">Data de nascimento:</span> <%= candidato.dataNascimento %></p>
                 <p> <span class="header-dados-label">CPF:</span> <%= candidato.cpf %></p>
@@ -227,7 +225,7 @@
                     Marque as alternativas no CARTÃO RESPOSTA, de acordo com o
                     modelo:
                 </p>
-                <div class="resposta-item-container" style="margin: 8px auto 0;">
+                <div class="resposta-item-container" style="margin: 8px auto 0; display: inline-block;">
                     <p class="resposta-item-container-numeracao" style="display: inline-block; margin: 0 auto;">1</p>
                     <ul class="resposta-item-container-list-opcoes" style="display: inline-block;">
                         <li>A</li>
@@ -249,27 +247,36 @@
                 </li>
             </ul>
         </div>
-        <div class="tabela-resposta-container" style="width: 360px;">
+        <div class="tabela-resposta-container" style="width: 400px;">
             <p>LÍNGUA INGLESA</p>
-            <ul style="width: fit-content;">
-                <li class="resposta-item-container" style="display: inline-block; width: 180px;">
-                    <span class="resposta-item-container-numeracao" style="display: inline-block;">1</span>
-                    <ul class="resposta-item-container-list-opcoes" style="display: inline-block;">
-                        <li>A</li>
-                        <li>B</li>
-                        <li>C</li>
-                        <li>D</li>
-                    </ul>
-                </li>
-                <li class="resposta-item-container" style="display: inline-block; width: 179px;">
-                    <span class="resposta-item-container-numeracao" style="display: inline-block;">1</span>
-                    <ul class="resposta-item-container-list-opcoes" style="display: inline-block;">
-                        <li>A</li>
-                        <li>B</li>
-                        <li>C</li>
-                        <li>D</li>
-                    </ul>
-                </li>
+            <ul style="display: inline-table;">
+                <% for (let index = 0; index <= 20; index++) { %>
+                    <li class="resposta-item-container" style="display: inline-block; width: 199px;">
+                        <% element = index + 1 %>
+                        <span class="resposta-item-container-numeracao" style="display: inline-block;">
+                            <%= element %>
+                        </span>
+                        <ul class="resposta-item-container-list-opcoes" style="display: inline-block;">
+                            <li>A</li>
+                            <li>B</li>
+                            <li>C</li>
+                            <li>D</li>
+                        </ul>
+                    </li>
+                <% } %>
+                <% for (let index = 20; index < 41; index++) { %>
+                    <li class="resposta-item-container" style="display: inline-block; width: 199px;">
+                        <span class="resposta-item-container-numeracao" style="display: inline-block;">
+                            <%= index %>
+                        </span>
+                        <ul class="resposta-item-container-list-opcoes" style="display: inline-block;">
+                            <li>A</li>
+                            <li>B</li>
+                            <li>C</li>
+                            <li>D</li>
+                        </ul>
+                    </li>
+                <% } %>
             </ul>
         </div>
     </main>
