@@ -143,21 +143,32 @@
             background-color: #FFF;
             border: 1px solid #999;
             border-right: none;
+            border-bottom: none;
         }
 
         .tabela-resposta-container p {
             padding: 0.5rem 0;
             font-weight: bold;
             text-align: center;
+            border-bottom: 1px solid #999;
             border-right: 1px solid #999;
         }
-
-        /* w-fit mx-auto grid grid-cols-2 */
 
         .tabela-resposta-container > ul {
             width: fit-content;
             display: grid;
             grid-template-columns: repeat(2, 1fr);
+        }
+
+        .tabela-resposta-container > ul > li {
+            width: fit-content;
+            display: flex;
+            align-items: center;
+            background-color: #FFF;
+            border: 1px solid #999;
+            border-left: none;
+            border-top: none;
+            list-style: none;
         }
 
         footer {
